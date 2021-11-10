@@ -14,7 +14,7 @@
 	<input type="text" placeholder="Username" id="username-text" required="True" maxlength="50">
 
 	<label for="psw">Password(minimum 9 Letter's)</b></label>
-	<input type="password" placeholder="Password(minimum 9 Letter's)" id="password-text" required="True" minlength="9">
+	<input type="password" placeholder="Password(minimum 9 Letter's)" id="password-text" required="True" minlength="6">
 
 	<label for="repeat-password">Re-Type Password</b></label>
 	<input type="password" placeholder="Repeat Password" id="repeat-password-text" required="True">

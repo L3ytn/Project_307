@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="App/Server/Controller/PostUploadController"></script>
+	<title>Upload</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+		<?php require_once "../header.php"; ?>
+		<?php if (!is_numeric($creationResult)): ?>
+			<form enctype="multipart/form-data" method="POST">
+				<input id="title-text" type="text" name="title" placeholder="Title">
+				<br>
+				<input id="description-text" type="text" name="description" placeholder="Description" maxlength="120">
+				<select id="license-select" name="license">
+					<option value="all-rights-reserved" selected>All rights reserved</option>
+					<option value="cc-by-nc-nd">CC BY-NC-ND</option>
+					<option value="cc-by-nd">CC BY-ND</option>
+					<option value="cc-by-nc-sa">CC BY-NC-SA</option>
+					<option value="cc-by-nc">CC BY-NC</option>
+					<option value="cc-by-sa">CC BY-SA</option>
+					<option value="cc-by">CC BY</option>
+					<option value="cc0">CC0 / Public Domain</option>
+			</select>
+			<br>
+			<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+			<input type="file" name="Image">
+			<br>
+			<button id="cancel-button">cancel</button>
+			<button id="upload-button" name="submitbutton">Submit</button>
+		</form>
+	<?php endif; ?>

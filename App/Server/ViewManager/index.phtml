@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="stylesheet.css"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+</head>
+<body>
+	<div class="topnav">
+		<a class="active" href="index.php"><img src=""/a>
+  		<a href="index.php">Home</a>
+  		<a href="rules.php">Rules</a>
+  		<a href="about.php">About</a>
+  		<a href="login.php">Log-in</a>
+  		<a href="signup.php">Sign-up</a>
+	</div>
+
+	<button class="Upload-picture" id="upload-picture-button">Upload-Picture</button>
+	
+	<div class="upload-modal" id="upload-modal" style="display: none;">
+		<?php require_once "App/Server/ViewController/upload.phtml"; ?>
+		<?php if (!is_numeric($creationResult)): ?>
+		<form enctype="multipart/form-data" method="POST">
+			<input id="title-text" type="text" name="title" placeholder="Title">
+			<br>
+			<input id="description-text" type="text" name="description" placeholder="Description" maxlength="120">
+			<select id="license-select" name="license">
+				<option value="all-rights-reserved" selected>All rights reserved</option>
+				<option value="cc-by-nc-nd">CC BY-NC-ND</option>
+				<option value="cc-by-nd">CC BY-ND</option>
+				<option value="cc-by-nc-sa">CC BY-NC-SA</option>
+				<option value="cc-by-nc">CC BY-NC</option>
+				<option value="cc-by-sa">CC BY-SA</option>
+				<option value="cc-by">CC BY</option>
+				<option value="cc0">CC0 / Public Domain</option>
+			</select>
+			<br>
+			<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+			<input type="file" name="Image">
+			<br>
+			<button id="cancel-button">cancel</button>
+			<button id="upload-button" name="uploadbuttonbutton">Upload</button>
+		</form>
+	<?php endif; ?>
+
+
+	</div>
+
+
+</body>
+</html>

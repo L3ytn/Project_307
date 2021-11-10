@@ -5,7 +5,7 @@ class AuthentificationViewController {
 
 	constructor() {
 		this.usernameText = document.getElementById("username-text");
-		this.passwordText = document.getElementById("password_text");
+		this.passwordText = document.getElementById("password-text");
 		this.reTypePassword = document.getElementById("repeat-password-text");
 		this.cancelButton = document.getElementById("cancel-button");
 		this.signUpButton = document.getElementById("sign-up-button");
@@ -20,10 +20,15 @@ class AuthentificationViewController {
 
 	onSignUpButtonPress(event) {
 		event.preventDefault();
-		var customText = this.usernameText.value;
+		var usernameText = this.usernameText.value;
+		var passwordText = this.passwordText.value;
+		var reTypePassword = this.reTypePassword.value;
 
 		var requestData = {
-			text: customText
+			username: usernameText,
+			password: passwordText,
+			reTypePassword: reTypePassword
+
 		};
 
 		this.loadTextRequest = new XMLHttpRequest();
