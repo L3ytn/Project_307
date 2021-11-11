@@ -1,5 +1,5 @@
 class PostUploadController {
-	static nitialize() {
+	static initialize() {
 		PostUploadController.instance = new PostUploadController();
 	}
 
@@ -7,11 +7,18 @@ class PostUploadController {
 		this.titleText = document.getElementById("title-text");
 		this.descriptionText = document.getElementById("description-text");
 		this.licenseSelect = document.getElementById("license-select");
+		this.imageUrl = document.getElementById("image-url-field");
 		this.uploadModal = document.getElementById("upload-modal");
+		this.cancelButton = document.getElementById("cancel-button");
+		this.uploadPictureButton = document.getElementById("upload-picture-button");
 
-		this.uploadPictureButton.addEventListener("click" this onUploadButtonPress.bind(this))
 		this.cancelButton.addEventListener("click", this.onCancelButtonPress.bind(this));
-		this.uploadButton.addEventListener("click", this.onUploadButtonPress.bind(this));
+		this.uploadPictureButton.addEventListener("click", this.onUploadPictureButtonPress.bind(this));
+		//this.uploadButton.addEventListener("click", this.onUploadButtonPress.bind(this));
+	}
+
+	onCancelButtonPress(event) {
+		window.open("index.php", "_self");
 	}
 
 	onUploadButtonPress(event) {
@@ -19,11 +26,13 @@ class PostUploadController {
 		var titleText = this.titleText.value;
 		var descriptionText = this.descriptionText.value;
 		var licenseSelect = this.licenseSelect.value;
+		var imageUrl = this.imageUrl.value;
 
 		var requestData = {
 			title: titleText,
 			description: descriptionText,
-			text: licenseSelect	
+			license: licenseSelect,
+			image: imageUrl
 		};
 
 		this.loadTextRequest = new XMLHttpRequest();
@@ -32,7 +41,7 @@ class PostUploadController {
 		this.loadTextRequest.send(JSON.stringify(requestData));
 	}
 	onUploadPictureButtonPress (event) {
-		this.uploadModal.style.display = "";
+		this.uploadModal.parentNode.style.display = "";
 
 	}
 
@@ -46,4 +55,4 @@ class PostUploadController {
 	}
 
 }
-window.addEventListener("load", PostUploadController.Initialize);
+window.addEventListener("load", PostUploadController.initialize);

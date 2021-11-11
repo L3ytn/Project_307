@@ -46,8 +46,6 @@
 			return "The Passwords are not the same!";
 		}
 
-
-
 		$result = $this->database->query("INSERT INTO user(username, password) VALUES (?,?)", array($username, $password), array("s", "s"));
 
 			if ($result !== true) {

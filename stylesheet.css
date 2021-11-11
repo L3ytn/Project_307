@@ -1,4 +1,28 @@
-topnav {
-  color: red;
+.topnav {
+  text-align: right;
+  padding-top: 30px;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+
+.upload-modal {
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 300px;
+  margin-top: 250px;
+}
+
+.license-select {
+  padding-right: 30px;
+}
+
+
+
