@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 	<script src="App/Client/PostUploadController.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<meta charset="utf-8">
@@ -13,38 +16,56 @@
 <body>
 
 	<div class="topnav">
-		<a class="active" href="index.php"><img src=""/a>
-  		<a href="index.php">Home</a>
-  		<a href="rules.php">Rules</a>
-  		<a href="about.php">About</a>
-  		<a href="login.php">Log-in</a>
-  		<a href="signup.php">Sign-up</a>
+		<a class="active" href="index.php"><img src="IMG/P&P.png"/a>
+			<div class="nav-container">
+				<a href="index.php">Home</a>
+		  		<a href="rules.php">Rules</a>
+		  		<a href="about.php">About</a>
+		  		<a href="login.php">Log-in</a>
+		  		<a href="signup.php">Sign-up</a>
+		  	</div>
 	</div>
 
 	<button class="upload-picture" id="upload-picture-button">Upload-Picture</button>
+
+	<h1>Here would be the pictures!</h1>
 	
 	<div class="modal-container" style="display: none;">
 		<div class="upload-modal" id="upload-modal">
 			<form id="form-modal" enctype="multipart/form-data" method="POST">
 				<div class="forms-style">
-					<input id="title-text" type="text" name="title" placeholder="Title">
-					<br>
-					<input id="description-text" type="text" name="description" placeholder="Description" maxlength="120">
-					<br>
-					<select class="license-select" id="license-select" name="license">
-						<option value="all-rights-reserved" selected>All Rights Reserved</option>
-						<option value="cc-by-nc-nd">CC BY-NC-ND</option>
-						<option value="cc-by-nd">CC BY-ND</option>
-						<option value="cc-by-nc-sa">CC BY-NC-SA</option>
-						<option value="cc-by-nc">CC BY-NC</option>
-						<option value="cc-by-sa">CC BY-SA</option>
-						<option value="cc-by">CC BY</option>
-						<option value="cc0">CC0 / Public Domain</option>
-					</select>
-					<br>
-					<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-					<input type="url" name="Image" id="image-url-field" placeholder="Url of the picture">
-					<br>
+					<table>
+						<tr>
+							<td>
+								<input id="title-text" type="text" name="title" placeholder="Title">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="description-text" type="textarea" name="description" placeholder="Description" maxlength="120">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select class="license-select" id="license-select" name="license">
+									<option value="all-rights-reserved" selected>All Rights Reserved</option>
+									<option value="cc-by-nc-nd">CC BY-NC-ND</option>
+									<option value="cc-by-nd">CC BY-ND</option>
+									<option value="cc-by-nc-sa">CC BY-NC-SA</option>
+									<option value="cc-by-nc">CC BY-NC</option>
+									<option value="cc-by-sa">CC BY-SA</option>
+									<option value="cc-by">CC BY</option>
+									<option value="cc0">CC0 / Public Domain</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+								<input type="url" name="Image" id="image-url-field" placeholder="Url of the picture">
+							</td>
+						</tr>
+					</table>
 					<button id="cancel-button">Cancel</button>
 					<button id="upload-button">Upload</button>
 				</div>
