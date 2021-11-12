@@ -1,1 +1,3 @@
-
+#config files
+App/config/configuration.json
+App/config/.htaccess
